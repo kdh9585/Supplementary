@@ -9,6 +9,7 @@ import { useCreatePointTransactionOfBuyingAndSelling } from "../../../commons/ho
 import { useDeleteUseditem } from "../../../commons/hooks/mutation/useDeleteUseditem";
 import { useMoveToPage } from "../../../commons/hooks/custom/useMoveToPage";
 import ProductComment from "../comment/list/CommentList.index";
+import KakaoMapView from "../../../commons/kakaomap/mapview";
 
 export default function ProductDetail() {
   const router = useRouter();
@@ -29,6 +30,7 @@ export default function ProductDetail() {
   const onClickBuy = (useditemId: any) => () => {
     void createPointTransactionOfBuyingAndSellingSubmit(useditemId);
   };
+  console.log(data?.fetchUseditem);
 
   return (
     <S.Wrapper>
@@ -121,7 +123,8 @@ export default function ProductDetail() {
               상품상세설명에 배송/교환/반품/취소 관련 안내가 기재된 경우 다음
               안내사항보다 우선 적용됩니다.
             </div>
-            <div>Map</div>
+            <S.MapImg src="/Detail/Brand/map.png" />
+
             <ul>
               <li>
                 상품별로 상품 특성 및 배송지에 따라 배송유형 및 소요기간이
